@@ -32,7 +32,24 @@
             <option value="Detention" {{ $incident->level_of_violation == "Detention" ? 'selected' : '' }}>Detention</option>
             <option value="Sending a student to the principal's office" {{ $incident->level_of_violation == "Sending a student to the principal's office" ? 'selected' : '' }}>Sending a student to the principal's office</option>
             <option value="Reprimand" {{ $incident->level_of_violation == "Reprimand" ? 'selected' : '' }}>Reprimand</option>
+            <option value="Warnings" {{ $incident->level_of_violation == "Warnings" ? 'selected' : '' }}>Warning</option>
+            <option value="Suspensions" {{ $incident->level_of_violation == "Suspensions" ? 'selected' : '' }}>Suspension</option>
+            <option value="Interim suspension" {{ $incident->level_of_violation == "Interim suspension" ? 'selected' : '' }}>Interim suspension</option>
+            <option value="Expulsions" {{ $incident->level_of_violation == "Expulsions" ? 'selected' : '' }}>Expulsions</option>
             <!-- Add more options if needed -->
+        </select><br><br>
+        <label>Intervention Programs:</label><br>
+        <select name="intervention_program" required>
+            <option value="Counseling Sessions" {{ $incident->intervention_program == "Counseling Sessions" ? 'selected' : '' }}>Counseling Sessions</option>
+            <option value="Behavior Modification Workshops" {{ $incident->intervention_program == "Behavior Modification Workshops" ? 'selected' : '' }}>Behavior Modification Workshops</option>
+            <option value="Academic Support Programs" {{ $incident->intervention_program == "Academic Support Programs" ? 'selected' : '' }}>Academic Support Programs</option>
+            <option value="Peer Mediation Programs" {{ $incident->intervention_program == "Peer Mediation Programs" ? 'selected' : '' }}>Peer Mediation Programs</option>
+            <option value="Restorative Justice Practices" {{ $incident->intervention_program == "Restorative Justice Practices" ? 'selected' : '' }}>Restorative Justice Practices</option>
+            <option value="Community Service Assignments" {{ $incident->intervention_program == "Community Service Assignments" ? 'selected' : '' }}>Community Service Assignments</option>
+            <option value="Parent-Teacher Conferences" {{ $incident->intervention_program == "Parent-Teacher Conferences" ? 'selected' : '' }}>Parent-Teacher Conferences</option>
+            <option value="Anger Management Training" {{ $incident->intervention_program == "Anger Management Training" ? 'selected' : '' }}>Anger Management Training</option>
+            <option value="Substance Abuse Counseling" {{ $incident->intervention_program == "Substance Abuse Counseling" ? 'selected' : '' }}>Substance Abuse Counseling</option>
+            <option value="Conflict Resolution Training" {{ $incident->intervention_program == "Conflict Resolution Training" ? 'selected' : '' }}>Conflict Resolution Training</option>
         </select><br><br>
         <label>Type of Violation:</label><br>
         <select name="violation_type_id" required>
