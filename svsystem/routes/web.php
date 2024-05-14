@@ -25,9 +25,17 @@ Route::post('/register', [RegisterController::class, 'register']);
 Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin_dashboard');
 Route::get('/listofstudents', [AdminController::class, 'listStudents'])->name('admin.liststudents');
 
+Route::get('/student/{id}', [AdminController::class, 'viewStudent'])->name('admin.viewstudent');
+Route::get('/incident_report/{id}', [AdminController::class, 'addIncidentReport'])->name('incident_report');
+Route::get('/view_incident_report/{id}', [AdminController::class, 'viewIncidentReport'])->name('view_incident_report');
 
 
-//studeng_dashboard
+
+
+
+
+
+//student_dashboard
 
 Route::get('/student/dashboard', [StudentController::class, 'dashboard'])->name('student.dashboard');
 

@@ -30,7 +30,7 @@
             <td>{{ $student->id }}</td>
             <td>{{ $student->name }}</td>
             <td>{{ $student->email }}</td>
-            <td><a href='view_student.php?id={{ $student->id }}'>View Details</a></td>
+            <td><a href="{{ route('admin.viewstudent', ['id' => $student->id]) }}">View Details</a></td>
         </tr>
         @endforeach
 
