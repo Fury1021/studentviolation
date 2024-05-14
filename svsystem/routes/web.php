@@ -36,15 +36,12 @@ Route::middleware('auth')->group(function () {
     Route::post('/incident_report', [AdminController::class, 'storeIncidentReport'])->name('store_incident_report');
     Route::get('/view_incident_report/{id}', [AdminController::class, 'viewIncidentReport'])->name('view_incident_report');
     Route::get('/update_incident_report/{id}', [AdminController::class, 'edit_incident_report'])->name('edit_incident_report');
-
     Route::post('/update_incident_report', [AdminController::class, 'update_incident_report'])->name('update_incident_report');
 
 });
 
-
-
 //student_dashboard
 
-Route::get('/student/dashboard', [StudentController::class, 'dashboard'])->name('student.dashboard');
+Route::get('/student/dashboard', [StudentController::class, 'dashboard'])->name('student_dashboard');
 
 

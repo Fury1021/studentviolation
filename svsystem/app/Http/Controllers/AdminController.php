@@ -10,6 +10,8 @@ use Auth;
 
 class AdminController extends Controller
 {
+
+
     public function dashboard()
     {
         // Add your dashboard logic here

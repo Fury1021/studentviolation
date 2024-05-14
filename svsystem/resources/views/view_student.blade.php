@@ -13,7 +13,7 @@
             <li><a href="#policy">Policy</a></li>
             <li><a href="#intervention">Intervention Programs</a></li>
             <li><a href="#incident">Incident Report</a></li>
-            <li><a href="{{ route('logout') }}">Logout</a></li>
+            <li><a href="{{ route('login') }}">Logout</a></li>
         </ul>
     </nav>
     <h2>Student Details</h2>

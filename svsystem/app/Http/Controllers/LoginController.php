@@ -32,9 +32,9 @@ class LoginController extends Controller
             }
     
             if (Auth::user()->role === 'admin') {
-                return view('admin_dashboard');
+                return redirect()->route('admin_dashboard');
             } elseif (Auth::user()->role === 'student') {
-                return view('student_dashboard');
+                return redirect()->route('student_dashboard');
             } else {
                 return redirect()->back()->with('error', 'Invalid role');
             }
