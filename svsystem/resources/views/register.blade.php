@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
 </head>
 <body>
-    <h2>Register</h2>
+    <h2>Add new student</h2>
     <form method="POST" action="{{ route('register') }}">
         @csrf <!-- CSRF Protection -->
         <label for="name">Name:</label><br>

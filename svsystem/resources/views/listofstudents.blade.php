@@ -18,6 +18,7 @@
         </ul>
     </nav>
     <h2>Student List</h2>
+    <button><a href="{{ route('register') }}">Add Student</a></button>
     <table border="1">
         <tr>
             <th>ID</th>
