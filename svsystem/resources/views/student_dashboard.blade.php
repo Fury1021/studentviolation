@@ -25,7 +25,6 @@
         <p>Add your profile content here</p>
     </div>
     <!-- Add more content sections for other links -->
-
     <footer>
         <p>&copy; {{ date("Y") }} Your School Name. All Rights Reserved.</p>
     </footer>

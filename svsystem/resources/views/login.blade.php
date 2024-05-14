@@ -17,6 +17,5 @@
         <input type="password" id="password" name="password" required><br><br>
         <input type="submit" value="Login">
     </form>
-    <p>Don't have an account? <a href="{{ route('register') }}">Create Account</a></p>
 </body>
 </html>
