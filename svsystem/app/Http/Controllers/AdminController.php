@@ -34,10 +34,34 @@ class AdminController extends Controller
         ]);
     }
 
-    public function addIncidentReport($id)
+    public function addIncidentReportForm($id)
     {
-        // Your logic to add an incident report
-        return view('add_incident_report', ['student_id' => $id]);
+        $student = User::findOrFail($id);
+        $violationTypes = ViolationType::all();
+        return view('admin.add_incident_report', compact('student', 'violationTypes'));
+    }
+
+    public function storeIncidentReport(Request $request)
+    {
+        $request->validate([
+            'date' => 'required|date',
+            'details' => 'required|string',
+            'level_of_violation' => 'required|string',
+            'intervention_program' => 'required|string',
+            'violation_type_id' => 'required|integer',
+            'student_id' => 'required|integer|exists:users,id'
+        ]);
+
+        IncidentReport::create([
+            'date' => $request->date,
+            'details' => $request->details,
+            'level_of_violation' => $request->level_of_violation,
+            'intervention_program' => $request->intervention_program,
+            'violation_type_id' => $request->violation_type_id,
+            'student_id' => $request->student_id,
+        ]);
+
+        return redirect()->route('admin.viewstudent', $request->student_id)->with('success', 'Incident report added successfully.');
     }
 
     public function viewIncidentReport($id)

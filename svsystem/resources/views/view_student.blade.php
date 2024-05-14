@@ -37,7 +37,7 @@
         <p>Student not found</p>
     @endif
 
-    <button><a href="{{ route('incident_report', ['id' => $student->id]) }}">Add Incident Report</a></button>
+    <button><a href="{{ route('add_incident_report', ['id' => $student->id]) }}">Add Incident Report</a></button>
     <button><a href="{{ route('admin.liststudents') }}">Back to Student List</a></button>
     <footer>
         <p>&copy; {{ date('Y') }} Your School Name. All Rights Reserved.</p>

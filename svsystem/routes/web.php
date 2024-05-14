@@ -8,13 +8,20 @@ use App\Http\Controllers\StudentController;
 
 
 Route::get('/', function () {
-    return view('login');
+    return view('chooseuser');
 });
+
+
+
 
 // Authentication Routes
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/loginstudent', [LoginController::class, 'showStudentLoginForm'])->name('loginstudent');
+Route::post('/loginstudent', [LoginController::class, 'loginstudent']);
+
+
 
 // Registration Routes
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
@@ -26,13 +33,8 @@ Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('adm
 Route::get('/listofstudents', [AdminController::class, 'listStudents'])->name('admin.liststudents');
 
 Route::get('/student/{id}', [AdminController::class, 'viewStudent'])->name('admin.viewstudent');
-Route::get('/incident_report/{id}', [AdminController::class, 'addIncidentReport'])->name('incident_report');
-Route::get('/view_incident_report/{id}', [AdminController::class, 'viewIncidentReport'])->name('view_incident_report');
-
-
-
-
-
+Route::get('/incident_report/{id}', [AdminController::class, 'add_incident_report'])->name('add_incident_report');
+Route::get('/view_incident_report/{id}', [AdminController::class, 'view_incident_report'])->name('view_incident_report');
 
 
 //student_dashboard

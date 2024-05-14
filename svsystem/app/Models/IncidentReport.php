@@ -1,6 +1,7 @@
 <?php
 
 // app/Models/IncidentReport.php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -11,11 +12,12 @@ class IncidentReport extends Model
     use HasFactory;
 
     protected $fillable = [
-        'student_id', 
-        'violation_type_id', 
         'date', 
         'details', 
-        'level_of_violation'
+        'level_of_violation', 
+        'intervention_program', 
+        'violation_type_id', 
+        'student_id'
     ];
 
     public function student()
@@ -25,8 +27,6 @@ class IncidentReport extends Model
 
     public function violationType()
     {
-        return $this->belongsTo(ViolationType::class);
+        return $this->belongsTo(ViolationType::class, 'violation_type_id');
     }
 }
-
-
