@@ -28,12 +28,19 @@ Route::post('/register', [RegisterController::class, 'register']);
 
 //admin_dashboard Routes
 
-Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin_dashboard');
-Route::get('/listofstudents', [AdminController::class, 'listStudents'])->name('admin.liststudents');
+Route::middleware('auth')->group(function () {
+    Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin_dashboard');
+    Route::get('/listofstudents', [AdminController::class, 'listStudents'])->name('admin.liststudents');
+    Route::get('/student/{id}', [AdminController::class, 'viewStudent'])->name('admin.viewstudent');
+    Route::get('/incident_report/{id}', [AdminController::class, 'add_incident_report'])->name('add_incident_report');
+    Route::post('/incident_report', [AdminController::class, 'storeIncidentReport'])->name('store_incident_report');
+    Route::get('/view_incident_report/{id}', [AdminController::class, 'viewIncidentReport'])->name('view_incident_report');
+    Route::get('/update_incident_report/{id}', [AdminController::class, 'edit_incident_report'])->name('edit_incident_report');
 
-Route::get('/student/{id}', [AdminController::class, 'viewStudent'])->name('admin.viewstudent');
-Route::get('/incident_report/{id}', [AdminController::class, 'add_incident_report'])->name('add_incident_report');
-Route::get('/view_incident_report/{id}', [AdminController::class, 'view_incident_report'])->name('view_incident_report');
+    Route::post('/update_incident_report', [AdminController::class, 'update_incident_report'])->name('update_incident_report');
+
+});
+
 
 
 //student_dashboard

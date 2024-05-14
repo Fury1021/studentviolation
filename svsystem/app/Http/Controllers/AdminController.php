@@ -1,13 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\IncidentReport;
 use App\Models\ViolationType;
-
-
-
+use Auth;
 
 class AdminController extends Controller
 {
@@ -34,11 +33,15 @@ class AdminController extends Controller
         ]);
     }
 
-    public function addIncidentReportForm($id)
+    public function add_incident_report($id)
     {
-        $student = User::findOrFail($id);
+        $student = User::find($id);
         $violationTypes = ViolationType::all();
-        return view('admin.add_incident_report', compact('student', 'violationTypes'));
+
+        return view('add_incident_report', [
+            'student' => $student,
+            'violationTypes' => $violationTypes
+        ]);
     }
 
     public function storeIncidentReport(Request $request)
@@ -49,7 +52,8 @@ class AdminController extends Controller
             'level_of_violation' => 'required|string',
             'intervention_program' => 'required|string',
             'violation_type_id' => 'required|integer',
-            'student_id' => 'required|integer|exists:users,id'
+            'student_id' => 'required|integer',
+            'reported_by' => 'required|integer',
         ]);
 
         IncidentReport::create([
@@ -59,10 +63,14 @@ class AdminController extends Controller
             'intervention_program' => $request->intervention_program,
             'violation_type_id' => $request->violation_type_id,
             'student_id' => $request->student_id,
+            'reported_by' => $request->reported_by,
         ]);
 
-        return redirect()->route('admin.viewstudent', $request->student_id)->with('success', 'Incident report added successfully.');
+        return redirect()->route('admin.viewstudent', ['id' => $request->student_id])
+                        ->with('success', 'Incident report added successfully.');
     }
+
+
 
     public function viewIncidentReport($id)
     {
@@ -78,5 +86,43 @@ class AdminController extends Controller
             return redirect()->back()->with('error', 'Incident report not found');
         }
     }
-}
+    
+    public function edit_incident_report($id)
+    {
+        $incident = IncidentReport::find($id);
+        $violationTypes = ViolationType::all();
+    
+        return view('edit_incident_report', [
+            'incident' => $incident,
+            'violationTypes' => $violationTypes
+        ]);
+    }
+    
+    public function update_incident_report(Request $request)
+    {
+        $request->validate([
+            'id' => 'required|integer',
+            'date' => 'required|date',
+            'details' => 'required|string',
+            'level_of_violation' => 'required|string',
+            'violation_type_id' => 'required|integer',
+        ]);
 
+        $incident = IncidentReport::find($request->id);
+
+        if (!$incident) {
+            return redirect()->back()->with('error', 'Incident report not found');
+        }
+
+        $incident->date = $request->date;
+        $incident->details = $request->details;
+        $incident->level_of_violation = $request->level_of_violation;
+        $incident->violation_type_id = $request->violation_type_id;
+        $incident->save();
+
+        return redirect()->route('admin.viewstudent', ['id' => $incident->student_id])->with('success', 'Incident report updated successfully.');
+    }
+
+    
+
+}

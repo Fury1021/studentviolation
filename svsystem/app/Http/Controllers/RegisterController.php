@@ -31,7 +31,8 @@ class RegisterController extends Controller
     $user->save();
 
     // Redirect to login page after successful registration
-    return redirect()->route('login');
+    return redirect()->route('admin.liststudents');
+    
 }
 
 }

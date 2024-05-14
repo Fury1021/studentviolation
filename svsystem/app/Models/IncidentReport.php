@@ -12,13 +12,15 @@ class IncidentReport extends Model
     use HasFactory;
 
     protected $fillable = [
-        'date', 
-        'details', 
-        'level_of_violation', 
-        'intervention_program', 
-        'violation_type_id', 
-        'student_id'
+        'date',
+        'details',
+        'level_of_violation',
+        'intervention_program',
+        'violation_type_id',
+        'student_id',
+        'reported_by',
     ];
+    
 
     public function student()
     {
