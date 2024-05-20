@@ -41,8 +41,10 @@ Route::middleware('auth')->group(function () {
 });
 
 //student_dashboard
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', [StudentController::class, 'dashboard'])->name('student_dashboard');
+});
 
-Route::get('/student/dashboard', [StudentController::class, 'dashboard'])->name('student_dashboard');
 
 
 

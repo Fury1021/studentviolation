@@ -21,25 +21,20 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
-    
+
         if (Auth::attempt($credentials)) {
-            // Check if the user's password needs to be upgraded to Bcrypt
-            if (!Hash::needsRehash(Auth::user()->password)) {
-                // Retrieve the user model from the database
-                $user = User::find(Auth::user()->id);
-                $user->password = Hash::make($request->password);
-                $user->save();
-            }
-    
-            if (Auth::user()->role === 'admin') {
+            $user = Auth::user();
+
+            if ($user->role === 'admin') {
                 return redirect()->route('admin_dashboard');
-            } elseif (Auth::user()->role === 'student') {
+            } elseif ($user->role === 'student') {
                 return redirect()->route('student_dashboard');
             } else {
+                Auth::logout();
                 return redirect()->back()->with('error', 'Invalid role');
             }
         }
-    
+
         return redirect()->back()->with('error', 'Invalid email or password');
     }
 
