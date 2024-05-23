@@ -25,13 +25,13 @@
         <h1>Welcome, {{ $student->name }}</h1>
         <h2>Student Details</h2>
         <p>Email: {{ $student->email }}</p>
-        <button><a href="">Edit Profile</a></button>
+        <p>Student Number: {{ $student->student_no }}</p>   
 
         @if($incidentReports->isNotEmpty())
             <h3>Incident Reports:</h3>
             @foreach($incidentReports as $incident)
                 <p>Date: {{ $incident->date }}</p>
-                <p>Level of Violation: {{ $incident->level_of_violation }}</p>
+                <p>Type of Violation: {{ $incident->violationType->name }}</p>
                 <button><a href="{{ route('student.viewIncidentReport', ['id' => $incident->id]) }}">View Details</a></button>
                 <br> <!-- Add a line break for better separation -->
             @endforeach

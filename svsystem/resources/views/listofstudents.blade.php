@@ -3,7 +3,6 @@
 <head>
     <title>Admin Dashboard</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/listofstudents.css') }}">
-
 </head>
 <body>
     <nav>
@@ -21,23 +20,22 @@
     <button><a href="{{ route('register') }}">Add Student</a></button>
     <table border="1">
         <tr>
-            <th>ID</th>
+            <th>Student No</th>
             <th>Name</th>
             <th>Email</th>
             <th>Action</th>
         </tr>
         @foreach($students as $student)
         <tr>
-            <td>{{ $student->id }}</td>
+            <td>{{ $student->student_no }}</td>
             <td>{{ $student->name }}</td>
             <td>{{ $student->email }}</td>
             <td><a href="{{ route('admin.viewstudent', ['id' => $student->id]) }}">View Details</a></td>
         </tr>
         @endforeach
-
     </table>
     <footer>
-        <p>&copy; <?php echo date("Y"); ?> Your School Name. All Rights Reserved.</p>
+        <p>&copy; {{ date('Y') }} Your School Name. All Rights Reserved.</p>
     </footer>
 </body>
 </html>

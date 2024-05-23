@@ -27,13 +27,14 @@ class AdminController extends Controller
     public function viewStudent($id)
     {
         $student = User::where('role', 'student')->find($id);
-        $incident_reports = IncidentReport::where('student_id', $id)->get();
-
+        $incident_reports = IncidentReport::where('student_id', $id)->with('violationType')->get();
+    
         return view('view_student', [
             'student' => $student,
             'incident_reports' => $incident_reports
         ]);
     }
+    
 
     public function add_incident_report($id)
     {

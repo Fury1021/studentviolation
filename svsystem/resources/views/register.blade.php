@@ -23,12 +23,14 @@
         <input type="text" id="name" name="name" required><br><br>
         <label for="email">Email:</label><br>
         <input type="email" id="email" name="email" required><br><br>
+        <label for="student_no">Student Number:</label><br>
+        <input type="text" id="student_no" name="student_no" required><br><br>
         <label for="password">Password:</label><br>
         <input type="password" id="password" name="password" required><br><br>
         <input type="submit" value="Register">
     </form>
-</body>
     <footer>
         <p>&copy; {{ date('Y') }} Your School Name. All Rights Reserved.</p>
     </footer>
+</body>
 </html>

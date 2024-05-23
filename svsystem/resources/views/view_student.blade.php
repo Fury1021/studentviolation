@@ -19,14 +19,16 @@
     <h2>Student Details</h2>
 
     @if($student)
+    
         <h3>Name: {{ $student->name }}</h3>
+        <p>Student Number: {{ $student->student_no }}</p>   
         <p>Email: {{ $student->email }}</p>
 
         @if($incident_reports->count() > 0)
             <h4>Incident Reports:</h4>
             @foreach($incident_reports as $incident)
                 <p>Date: {{ $incident->date }}</p>
-                <p>Level of Violation: {{ $incident->level_of_violation }}</p>
+                <p>Type of Violation: {{ $incident->violationType->name }}</p>
                 <button><a href="{{ route('view_incident_report', ['id' => $incident->id]) }}">View Details</a></button>
                 <br>
             @endforeach

@@ -20,13 +20,14 @@ class StudentController extends Controller
     public function profile($id)
     {
         $student = User::where('role', 'student')->find($id);
-        $incidentReports = IncidentReport::where('student_id', $student->id)->get();
-
+        $incidentReports = IncidentReport::where('student_id', $student->id)->with('violationType')->get();
+    
         return view('profile', [
             'student' => $student,
             'incidentReports' => $incidentReports
         ]);
     }
+    
 
     public function viewIncidentReport($id)
     {
