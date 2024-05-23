@@ -39,7 +39,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/update_incident_report/{id}', [AdminController::class, 'edit_incident_report'])->name('edit_incident_report');
     Route::post('/update_incident_report', [AdminController::class, 'update_incident_report'])->name('update_incident_report');
     Route::delete('/incident-report/{id}', [IncidentReportController::class, 'destroy'])->name('delete_incident_report');   
-
+    Route::get('/admin/editstudent/{id}', [AdminController::class, 'editStudent'])->name('admin.editstudent');
+    Route::put('/admin/updatestudent/{id}', [AdminController::class, 'updateStudent'])->name('admin.updatestudent');
+    Route::delete('/admin/deletestudent/{id}', [AdminController::class, 'deleteStudent'])->name('admin.deletestudent');
 });
 
 //student_dashboard

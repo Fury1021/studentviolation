@@ -29,6 +29,14 @@
         <h3>Name: {{ $student->name }}</h3>
         <p>Student Number: {{ $student->student_no }}</p>   
         <p>Email: {{ $student->email }}</p>
+        <div class="buttons-container">
+            <button><a href="{{ route('admin.editstudent', ['id' => $student->id]) }}">Edit</a></button>
+        <form method="POST" action="{{ route('admin.deletestudent', ['id' => $student->id]) }}" onsubmit="return confirm('Are you sure you want to delete this student?');">
+            @csrf
+            @method('DELETE')
+            <button type="submit">Delete Student</button>
+        </form>
+        </div>
 
         @if($incident_reports->count() > 0)
             <h4>Incident Reports:</h4>

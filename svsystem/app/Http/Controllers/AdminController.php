@@ -126,6 +126,31 @@ class AdminController extends Controller
         return redirect()->route('admin.viewstudent', ['id' => $incident->student_id])->with('success', 'Incident report updated successfully.');
     }
 
+
+
+        public function editStudent($id)
+    {
+        $student = User::find($id);
+        return view('edit_student_account', ['student' => $student]);
+    }
+
+    public function updateStudent(Request $request, $id)
+    {
+        $student = User::find($id);
+        $student->name = $request->name;
+        $student->student_no = $request->student_no;
+        $student->email = $request->email;
+        $student->save();
+        return redirect()->route('admin.liststudents')->with('success', 'Student updated successfully');
+    }
+
+    public function deleteStudent($id)
+    {
+        $student = User::find($id);
+        $student->delete();
+        return redirect()->route('admin.liststudents')->with('success', 'Student deleted successfully');
+    }
+
     
 
 }
