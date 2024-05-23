@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>Profile</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/svlogo.png') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/profile.css') }}">
 </head>
 <body>

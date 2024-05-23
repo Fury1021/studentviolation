@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>View Incident Report</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/svlogo.png') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/view_incident_report.css') }}">
 </head>
 <body>

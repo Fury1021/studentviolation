@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Edit Student</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/svlogo.png') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/edit_student_account.css') }}">
 </head>
 <body>
