@@ -43,6 +43,8 @@ Route::middleware('auth')->group(function () {
 //student_dashboard
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [StudentController::class, 'dashboard'])->name('student_dashboard');
+    Route::get('/student/profile/{id}', [StudentController::class, 'profile'])->name('profile');
+
 });
 
 
