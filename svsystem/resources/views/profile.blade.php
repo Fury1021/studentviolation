@@ -32,7 +32,7 @@
             @foreach($incidentReports as $incident)
                 <p>Date: {{ $incident->date }}</p>
                 <p>Level of Violation: {{ $incident->level_of_violation }}</p>
-                <button><a href=>View Details</a></button>
+                <button><a href="{{ route('student.viewIncidentReport', ['id' => $incident->id]) }}">View Details</a></button>
                 <br> <!-- Add a line break for better separation -->
             @endforeach
         @else

@@ -44,6 +44,8 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [StudentController::class, 'dashboard'])->name('student_dashboard');
     Route::get('/student/profile/{id}', [StudentController::class, 'profile'])->name('profile');
+    Route::get('/student/view-incident-report/{id}', [StudentController::class, 'viewIncidentReport'])->name('student.viewIncidentReport');
+
 
 });
 
