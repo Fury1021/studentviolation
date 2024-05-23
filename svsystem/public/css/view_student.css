@@ -55,14 +55,18 @@ h2 {
 
 h3 {
     margin-top: 20px;
+    margin-left: 600px;
 }
 
 h4 {
     margin-top: 20px;
+    text-align: center;
+    font-size: 30px;
 }
 
 p {
     margin-bottom: 10px;
+    margin-left: 600px;
 }
 
 button {
@@ -88,7 +92,12 @@ button:hover {
     background-color: #1a446c;
 }
 
-
+.buttons-container {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    justify-content: center ;
+    margin-bottom: 10px;
+}
 
 table {
     width: 100%;

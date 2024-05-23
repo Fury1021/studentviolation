@@ -22,8 +22,11 @@
         </ul>
         </nav>
     </header>
-    <h2>Student List</h2>
-    <button><a href="{{ route('register') }}">Add Student</a></button>
+    <h2 style="text-align: center;">Students List</h2>
+    <div class="buttons-container">
+        <button><a href="{{ route('register') }}">Add Student</a></button>
+        <button id="goback" onclick="goBack()">Go Back</button>
+    </div>
     <table border="1">
         <tr>
             <th>Student No</th>
@@ -40,7 +43,7 @@
         </tr>
         @endforeach
     </table>
-    <button onclick="goBack()">Go Back</button>
+
 
     <script>
         function goBack() { 
