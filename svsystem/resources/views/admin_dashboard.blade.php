@@ -50,7 +50,7 @@
         <p>Add your incident report content here</p>
     </div>
     <footer>
-        <p>&copy; {{ date('Y') }} Your School Name. All Rights Reserved.</p>
+        <p>&copy; {{ date('Y') }} Adamson University. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
