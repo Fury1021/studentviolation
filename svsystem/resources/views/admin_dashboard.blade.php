@@ -5,20 +5,25 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/admin_dashboard.css') }}">
 </head>
 <body>
-    <header>
-        <h1>Welcome, Admin!</h1>
-    </header>
+    <header>        
     <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="{{ route('admin.liststudents') }}">Students</a></li>
-            <li><a href="#violations">Violations</a></li>
-            <li><a href="#policy">Policy</a></li>
-            <li><a href="#intervention">Intervention Programs</a></li>
-            <li><a href="#incident">Incident Report</a></li>
-            <li><a href="{{ route('login') }}">Logout</a></li>
-        </ul>
+        <div class="logo">
+            <a href="{{ route('admin_dashboard') }}">
+            <img src="{{ asset('images/svlogo.png') }}" alt="Logo">
+        </div>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="{{ route('admin.liststudents') }}">Students</a></li>
+        <li><a href="#violations">Violations</a></li>
+        <li><a href="#policy">Policy</a></li>
+        <li><a href="#intervention">Intervention Programs</a></li>
+        <li><a href="#incident">Incident Report</a></li>
+        <li><a href="{{ route('login') }}">Logout</a></li>
+    </ul>
     </nav>
+    </header>
+    <h1>Welcome, Admin!</h1>
+
     <!-- Content sections for each navigation link -->
     <div class="content" id="about">
         <h2>About</h2>

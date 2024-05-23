@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Student Details</title>
+    <title>View Student</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/view_student.css') }}">
 </head>
 <body>
-    <nav>
+    <header>        
+        <nav>
+            <div class="logo">
+                <a href="{{ route('admin_dashboard') }}">
+                <img src="{{ asset('images/svlogo.png') }}" alt="Logo">
+            </div>
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="{{ route('admin.liststudents') }}">Students</a></li>
@@ -15,7 +20,8 @@
             <li><a href="#incident">Incident Report</a></li>
             <li><a href="{{ route('login') }}">Logout</a></li>
         </ul>
-    </nav>
+        </nav>
+    </header>
     <h2>Student Details</h2>
 
     @if($student)
@@ -26,12 +32,24 @@
 
         @if($incident_reports->count() > 0)
             <h4>Incident Reports:</h4>
-            @foreach($incident_reports as $incident)
-                <p>Date: {{ $incident->date }}</p>
-                <p>Type of Violation: {{ $incident->violationType->name }}</p>
-                <button><a href="{{ route('view_incident_report', ['id' => $incident->id]) }}">View Details</a></button>
-                <br>
-            @endforeach
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Type of Violation</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($incident_reports as $incident)
+                        <tr>
+                            <td>{{ $incident->date }}</td>
+                            <td>{{ $incident->violationType->name }}</td>
+                            <td><a href="{{ route('view_incident_report', ['id' => $incident->id]) }}">View Details</a></td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
         @else
             <p>No incident reports found</p>
         @endif

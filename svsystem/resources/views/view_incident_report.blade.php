@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +5,12 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/view_incident_report.css') }}">
 </head>
 <body>
-    <nav>
+    <header>        
+        <nav>
+            <div class="logo">
+                <a href="{{ route('admin_dashboard') }}">
+                <img src="{{ asset('images/svlogo.png') }}" alt="Logo">
+            </div>
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="{{ route('admin.liststudents') }}">Students</a></li>
@@ -16,20 +20,45 @@
             <li><a href="#incident">Incident Report</a></li>
             <li><a href="{{ route('login') }}">Logout</a></li>
         </ul>
-    </nav>
+        </nav>
+    </header>
     <h2>Incident Report Details</h2>
 
     @if($incident)
-        <p>Date: {{ $incident->date }}</p>
-        <p>Details: {{ $incident->details }}</p>
-        <p>Level of Violation: {{ $incident->level_of_violation }}</p>
-        <p>Type of Violation: {{ $violationType ? $violationType->name : 'Unknown' }}</p>
-        <button><a href="{{ route('edit_incident_report', ['id' => $incident->id]) }}">Edit</a></button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Details</th>
+                    <th>Level of Violation</th>
+                    <th>Type of Violation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ $incident->date }}</td>
+                    <td>{{ $incident->details }}</td>
+                    <td>{{ $incident->level_of_violation }}</td>
+                    <td>{{ $violationType ? $violationType->name : 'Unknown' }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Buttons container with flex layout -->
+        <div class="buttons-container">
+            <button><a href="{{ route('edit_incident_report', ['id' => $incident->id]) }}">Edit</a></button>
+
+            <!-- Delete button -->
+            <form method="POST" action="{{ route('delete_incident_report'   , ['id' => $incident->id]) }}" onsubmit="return confirm('Are you sure you want to delete this incident report?');">
+                @csrf
+                @method('DELETE')
+                <button type="submit">Delete</button>
+            </form>
+        </div>
     @else
         <p>Incident report not found</p>
     @endif
 
-    <button onclick="goBack()">Go Back</button>
+    <button id="goback" onclick="goBack()">Go Back</button>
 
     <script>
         function goBack() {

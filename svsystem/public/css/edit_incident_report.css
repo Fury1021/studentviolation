@@ -6,6 +6,10 @@ body {
     padding: 0;
 }
 
+header{
+    text-align: center;
+}
+
 nav {
     background-color: #165786;
     color: white;
@@ -80,6 +84,7 @@ button {
 
 button {
     margin-left: 10px;
+    margin-bottom: 20px;
 }
 
 button a {
@@ -96,7 +101,16 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
+}
+
+.logo {
+    margin-right: 20px; /* Add some spacing between the logo and the navigation links */
+}
+
+.logo img {
+    max-width: 200px; /* Set the maximum width of the logo */
+    border-radius: 10px; /* Add a border-radius for soft edges */
 }

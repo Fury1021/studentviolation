@@ -2,26 +2,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>View Incident Report</title>
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/student_dashboard.css') }}">
+    <title>Student View Incident Report</title>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/student_view_incident_report.css') }}">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="{{ route('profile', ['id' => Auth::user()->id]) }}">My Profile</a></li>
-            <li><a href="#violations">Violations</a></li>
-            <li><a href="#policy">Policy</a></li>
-            <li><a href="#intervention">Intervention Programs</a></li>
-            <li><a href="#incident">Incident Report</a></li>
-            <li>
-                <form action="{{ route('logout') }}" method="POST">
-                    @csrf
-                    <button type="submit">Logout</button>
-                </form>
-            </li>
-        </ul>
-    </nav>
+    <header>
+        <nav>
+            <div class="logo">
+                    <a href="{{ route('student_dashboard') }}">
+                    <img src="{{ asset('images/svlogo.png') }}" alt="Logo">
+                </div>
+            <ul>    
+                <li><a href="#about">About</a></li>
+                <li><a href="{{ route('profile', ['id' => Auth::user()->id]) }}">My Profile</a></li>
+                <li><a href="#violations">Violations</a></li>
+                <li><a href="#policy">Policy</a></li>
+                <li><a href="#intervention">Intervention Programs</a></li>
+                <li><a href="#incident">Incident Report</a></li>
+                <li><a href="{{ route('login') }}">Logout</a></li>
+            </ul>
+        </nav>       
+    </header>
     <h2>Incident Report Details</h2>
 
     @if ($incident)

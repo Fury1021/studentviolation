@@ -2,24 +2,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Profile</title>
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/student_dashboard.css') }}">
+    <title>Profile</title>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/profile.css') }}">
 </head>
 <body>
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="{{ route('profile', ['id' => Auth::user()->id]) }}">My Profile</a></li>
-        <li><a href="#violations">Violations</a></li>
-        <li><a href="#policy">Policy</a></li>
-        <li><a href="#intervention">Intervention Programs</a></li>
-        <li><a href="#incident">Incident Report</a></li>
-        <li>
-            <form action="{{ route('logout') }}" method="POST">
-                @csrf
-                <button type="submit">Logout</button>
-            </form>
-        </li>
-    </ul>
+    <header>
+        <nav>
+            <div class="logo">
+                    <a href="{{ route('student_dashboard') }}">
+                    <img src="{{ asset('images/svlogo.png') }}" alt="Logo">
+                </div>
+            <ul>    
+                <li><a href="#about">About</a></li>
+                <li><a href="{{ route('profile', ['id' => Auth::user()->id]) }}">My Profile</a></li>
+                <li><a href="#violations">Violations</a></li>
+                <li><a href="#policy">Policy</a></li>
+                <li><a href="#intervention">Intervention Programs</a></li>
+                <li><a href="#incident">Incident Report</a></li>
+                <li><a href="{{ route('login') }}">Logout</a></li>
+            </ul>
+        </nav>       
+    </header>
 
     @if(Auth::check())
         <h1>Welcome, {{ $student->name }}</h1>
@@ -29,19 +32,38 @@
 
         @if($incidentReports->isNotEmpty())
             <h3>Incident Reports:</h3>
-            @foreach($incidentReports as $incident)
-                <p>Date: {{ $incident->date }}</p>
-                <p>Type of Violation: {{ $incident->violationType->name }}</p>
-                <button><a href="{{ route('student.viewIncidentReport', ['id' => $incident->id]) }}">View Details</a></button>
-                <br> <!-- Add a line break for better separation -->
-            @endforeach
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Type of Violation</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($incidentReports as $incident)
+                        <tr>
+                            <td>{{ $incident->date }}</td>
+                            <td>{{ $incident->violationType->name }}</td>
+                            <td><a href="{{ route('student.viewIncidentReport', ['id' => $incident->id]) }}">View Details</a></td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
         @else
             <p>No incident reports found</p>
         @endif
     @else
         <p>Unauthorized access</p>
     @endif
+        
+    <button onclick="goBack()">Go Back</button>
 
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
     <footer>
         <p>&copy; {{ date('Y') }} Your School Name. All Rights Reserved.</p>
     </footer>

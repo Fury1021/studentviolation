@@ -6,7 +6,12 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/edit_incident_report.css') }}">
 </head>
 <body>
-    <nav>
+    <header>        
+        <nav>
+            <div class="logo">
+                <a href="{{ route('admin_dashboard') }}">
+                <img src="{{ asset('images/svlogo.png') }}" alt="Logo">
+            </div>
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="{{ route('admin.liststudents') }}">Students</a></li>
@@ -16,7 +21,8 @@
             <li><a href="#incident">Incident Report</a></li>
             <li><a href="{{ route('login') }}">Logout</a></li>
         </ul>
-    </nav>
+        </nav>
+    </header>
     <h2>Edit Incident Report</h2>
 
     <form action="{{ route('update_incident_report') }}" method="post">

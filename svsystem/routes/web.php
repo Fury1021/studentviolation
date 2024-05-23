@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\IncidentReportController;
 
 
 Route::get('/', function () {
@@ -37,6 +38,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/view_incident_report/{id}', [AdminController::class, 'viewIncidentReport'])->name('view_incident_report');
     Route::get('/update_incident_report/{id}', [AdminController::class, 'edit_incident_report'])->name('edit_incident_report');
     Route::post('/update_incident_report', [AdminController::class, 'update_incident_report'])->name('update_incident_report');
+    Route::delete('/incident-report/{id}', [IncidentReportController::class, 'destroy'])->name('delete_incident_report');   
 
 });
 

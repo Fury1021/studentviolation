@@ -47,3 +47,13 @@ footer {
     position: relative;
     bottom: 0;
 }
+
+.logo {
+    margin-right: 20px; /* Add some spacing between the logo and the navigation links */
+}
+
+.logo img {
+    max-width: 200px; /* Set the maximum width of the logo */
+    border-radius: 10px; /* Add a border-radius for soft edges */
+}
+
