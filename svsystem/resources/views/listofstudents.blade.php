@@ -6,6 +6,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/listofstudents.css') }}">
 </head>
 <body>
+    
+    
     <header>        
         <nav>
             <div class="logo">
@@ -14,7 +16,7 @@
             </div>
         <ul>
             <li><a href="{{ route('about') }}">About</a></li>
-            <li><a href="{{ route('admin.liststudents') }}">Students</a></li>
+            <li><a href="{{ route('admin.liststudents') }}">Students</a></li>   
             <li><a href="{{ route('violations') }}">Violations</a></li>
             <li><a href="{{ route('policy') }}">Policy</a></li>
             <li><a href="{{ route('interventions') }}">Intervention Programs</a></li>
@@ -58,6 +60,8 @@
         function goBack() { 
             window.history.back();
         }
+
+        
     </script>
     <footer>
         <p>&copy; {{ date('Y') }} Adamson University. All Rights Reserved.</p>

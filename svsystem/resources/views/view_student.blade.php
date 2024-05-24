@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/view_student.css') }}">
 </head>
 <body>
+    
     <header>        
         <nav>
             <div class="logo">

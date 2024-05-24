@@ -69,6 +69,7 @@ button:hover {
     background-color: #1a446c;
 }
 
+
 .buttons-container {
     display: flex;
     gap: 10px; /* Space between buttons */
@@ -79,6 +80,8 @@ button:hover {
 #goback{
     display: block;
 }
+
+
 table {
     width: 100%;
     border-collapse: collapse;

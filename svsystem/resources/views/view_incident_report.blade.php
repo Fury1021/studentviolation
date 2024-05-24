@@ -57,14 +57,16 @@
     @else
         <p>Incident report not found</p>
     @endif
-
-    <button id="goback" onclick="goBack()">Go Back</button>
-
+    <div class="buttons-container">
+        <button id="goback" onclick="goBack()">Go Back</button>
+    </div>
+    
     <script>
         function goBack() {
             window.history.back();
         }
     </script>
+
     <footer>
         <p>&copy; {{ date('Y') }} Adamson University. All Rights Reserved.</p>
     </footer>
