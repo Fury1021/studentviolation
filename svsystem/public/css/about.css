@@ -56,6 +56,42 @@ footer {
     border-radius: 10px; /* Add a border-radius for soft edges */
 }
 
+button {
+    background-color: #165786;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: #1a446c;
+}
+
+
+.buttons-container {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    justify-content: center ;
+    margin-bottom: 10px;
+}
+
+#goback{
+    display: block;
+    margin-bottom: 30px;
+}
+
 .card-container {
     display: flex;
     flex-wrap: wrap;

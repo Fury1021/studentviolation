@@ -13,16 +13,16 @@
             <img src="{{ asset('images/svlogo.png') }}" alt="Logo">
         </div>
     <ul>
-        <li><a href="{{ route('about') }}">About</a></li>
-        <li><a href="{{ route('admin.liststudents') }}">Students</a></li>
-        <li><a href="{{ route('violations') }}">Violations</a></li>
-        <li><a href="{{ route('policy') }}">Policy</a></li>
-        <li><a href="{{ route('interventions') }}">Intervention Programs</a></li>
+        <li><a href="{{ route('student_about') }}">About</a></li>
+        <li><a href="{{ route('profile', ['id' => Auth::user()->id]) }}">My Profile</a></li>
+        <li><a href="{{ route('student_violations') }}">Violations</a></li>
+        <li><a href="{{ route('student_policy') }}">Policy</a></li>
+        <li><a href="{{ route('student_interventions') }}">Intervention Programs</a></li>
         <li><a href="{{ route('login') }}">Logout</a></li>
     </ul>
     </nav>
     </header>
-    <h1>Welcome, Admin!</h1>
+    <h1>Welcome, Student!</h1>
 
     <!-- Content sections for each navigation link -->
 <div class="card-container" style="margin-bottom: 20px;">

@@ -27,13 +27,14 @@
     <!-- Content sections for each navigation link -->
 <div class="card-container" style="margin-bottom: 20px;">
     <div class="card">
-        <img src="{{ asset('images/about.png') }}" alt="Logo">
+        <img src="{{ asset('images/violations.png') }}" alt="Logo">
             <div class="card-content">
-                <h2 class="card-title">ABOUT</h2>
-                <p class="card-description">Violation Management System (VMS) handles the management and tracing of student misconducts in schools. The system is provided as a whole array of violation-related types such as academic cheating, student misbehavior, poor attendance records, substance abuse and violation of dress codes and other as well. Different levels are designed to categorize violations according to their intensity so that they are subject to appropriate consequences when there are minor or major cases. VMS addresses these violations through integration with other programs like counseling services, behavioral workshops, parental involvement initiatives and restorative justice methods. This system also enables correct documentation in line with school policies as well as timely stakeholder communication and follow-up on treatments. It has some key components such as easy-to-use interface, instant access to information, that make it one of the best tool for ensuring privacy and safety in education environment.</p>
+                <h2 class="card-title">VIOLATIONS</h2>
+                <p class="card-description">Any acts or behaviors that depart from the set rules and policies of the school are considered violations. These might be anything from transgressions of the dress code to more serious crimes like bullying or drug misuse. Every infraction is classified and entered into the system to guarantee that an exhaustive record is kept up to date. This classification aids in evaluating the frequency and seriousness of the infractions, which is essential for choosing the right courses of action and penalties. The system makes sure that the disciplinary procedure is equitable and consistent by methodically handling infractions.</p>
             </div>
     </div>
 </div>
+
     <button id="goback" onclick="goBack()">Go Back</button>
 
     <script>
@@ -41,7 +42,6 @@
             window.history.back();
         }
     </script>
-
     <footer>
         <p>&copy; {{ date('Y') }} Adamson University. All Rights Reserved.</p>
     </footer>

@@ -16,6 +16,27 @@ class StudentController extends Controller
         return view('student_dashboard');
     }
 
+    public function about()
+    {
+        return view('student_about');
+    }
+
+    public function policy()
+    {
+        return view('student_policy');
+    }
+
+    
+    public function violations()
+    {
+        return view('student_violations');
+    }
+
+    public function interventions()
+    {
+        return view('student_interventions');
+    }
+
 
     public function profile($id)
     {

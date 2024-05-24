@@ -32,6 +32,10 @@ Route::post('/register', [RegisterController::class, 'register']);
 Route::middleware('auth')->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin_dashboard');
     Route::get('/admin/about', [AdminController::class, 'about'])->name('about');
+    Route::get('/admin/violations', [AdminController::class, 'violations'])->name('violations');
+    Route::get('/admin/students', [AdminController::class, 'students'])->name('students');
+    Route::get('/admin/policy', [AdminController::class, 'policy'])->name('policy');
+    Route::get('/admin/interventions', [AdminController::class, 'interventions'])->name('interventions');
     Route::get('/listofstudents', [AdminController::class, 'listStudents'])->name('admin.liststudents');
     Route::get('/student/{id}', [AdminController::class, 'viewStudent'])->name('admin.viewstudent');
     Route::get('/incident_report/{id}', [AdminController::class, 'add_incident_report'])->name('add_incident_report');
@@ -49,6 +53,10 @@ Route::middleware('auth')->group(function () {
 //student_dashboard
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [StudentController::class, 'dashboard'])->name('student_dashboard');
+    Route::get('/about', [StudentController::class, 'about'])->name('student_about');
+    Route::get('/policy', [StudentController::class, 'policy'])->name('student_policy');
+    Route::get('/violations', [StudentController::class, 'violations'])->name('student_violations');
+    Route::get('/interventions', [StudentController::class, 'interventions'])->name('student_interventions');
     Route::get('/student/profile/{id}', [StudentController::class, 'profile'])->name('profile');
     Route::get('/student/view-incident-report/{id}', [StudentController::class, 'viewIncidentReport'])->name('student.viewIncidentReport');
 

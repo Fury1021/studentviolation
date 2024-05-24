@@ -92,12 +92,18 @@ button:hover {
     background-color: #1a446c;
 }
 
+
 .buttons-container {
     display: flex;
     gap: 10px; /* Space between buttons */
     justify-content: center ;
     margin-bottom: 10px;
 }
+
+#goback{
+    display: block;
+}
+
 
 table {
     width: 100%;

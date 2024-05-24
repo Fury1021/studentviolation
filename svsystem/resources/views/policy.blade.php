@@ -13,7 +13,7 @@
             <img src="{{ asset('images/svlogo.png') }}" alt="Logo">
         </div>
     <ul>
-        <li><a href="{{ route('about') }}">About</a></li>
+     <li><a href="{{ route('about') }}">About</a></li>
         <li><a href="{{ route('admin.liststudents') }}">Students</a></li>
         <li><a href="{{ route('violations') }}">Violations</a></li>
         <li><a href="{{ route('policy') }}">Policy</a></li>
@@ -27,10 +27,10 @@
     <!-- Content sections for each navigation link -->
 <div class="card-container" style="margin-bottom: 20px;">
     <div class="card">
-        <img src="{{ asset('images/about.png') }}" alt="Logo">
+        <img src="{{ asset('images/policy.png') }}" alt="Logo">
             <div class="card-content">
-                <h2 class="card-title">ABOUT</h2>
-                <p class="card-description">Violation Management System (VMS) handles the management and tracing of student misconducts in schools. The system is provided as a whole array of violation-related types such as academic cheating, student misbehavior, poor attendance records, substance abuse and violation of dress codes and other as well. Different levels are designed to categorize violations according to their intensity so that they are subject to appropriate consequences when there are minor or major cases. VMS addresses these violations through integration with other programs like counseling services, behavioral workshops, parental involvement initiatives and restorative justice methods. This system also enables correct documentation in line with school policies as well as timely stakeholder communication and follow-up on treatments. It has some key components such as easy-to-use interface, instant access to information, that make it one of the best tool for ensuring privacy and safety in education environment.</p>
+                <h2 class="card-title">Policy</h2>
+                <p class="card-description">Rules and policies established by the school must be followed, deviations from these guidelines are considered violations. These can include less serious transgressions like dressing code violations or more significant ones like bullying or drug addiction. To guarantee that an exhaustive record is kept, every infraction is classified and entered into the system. In order to choose the best interventions and penalties, it is essential to evaluate the severity and frequency of the infractions, which is made easier with the aid of this classification. The approach guarantees uniformity and equity in the disciplinary procedure by methodically handling infractions.</p>
             </div>
     </div>
 </div>
@@ -41,7 +41,6 @@
             window.history.back();
         }
     </script>
-
     <footer>
         <p>&copy; {{ date('Y') }} Adamson University. All Rights Reserved.</p>
     </footer>

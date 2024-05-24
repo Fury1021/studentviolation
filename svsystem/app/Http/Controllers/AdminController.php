@@ -24,6 +24,30 @@ class AdminController extends Controller
         return view('about');
     }
 
+    public function violations()
+    {
+        // Add your dashboard logic here
+        return view('violations');
+    }
+
+    public function students()
+    {
+        // Add your dashboard logic here
+        return view('students');
+    }
+
+    public function policy()
+    {
+        // Add your dashboard logic here
+        return view('policy');
+    }
+
+    public function interventions()
+    {
+        // Add your dashboard logic here    
+        return view('interventions');
+    }
+
     public function listStudents()
     {
         $students = User::where('role', 'student')->get();

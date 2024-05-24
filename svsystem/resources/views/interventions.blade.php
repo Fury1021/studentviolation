@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Admin Dashboard</title>
+    <title>Interventions</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('images/svlogo.png') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/about.css') }}">
 </head>
@@ -27,13 +27,14 @@
     <!-- Content sections for each navigation link -->
 <div class="card-container" style="margin-bottom: 20px;">
     <div class="card">
-        <img src="{{ asset('images/about.png') }}" alt="Logo">
+        <img src="{{ asset('images/intervention.png') }}" alt="Logo">
             <div class="card-content">
-                <h2 class="card-title">ABOUT</h2>
-                <p class="card-description">Violation Management System (VMS) handles the management and tracing of student misconducts in schools. The system is provided as a whole array of violation-related types such as academic cheating, student misbehavior, poor attendance records, substance abuse and violation of dress codes and other as well. Different levels are designed to categorize violations according to their intensity so that they are subject to appropriate consequences when there are minor or major cases. VMS addresses these violations through integration with other programs like counseling services, behavioral workshops, parental involvement initiatives and restorative justice methods. This system also enables correct documentation in line with school policies as well as timely stakeholder communication and follow-up on treatments. It has some key components such as easy-to-use interface, instant access to information, that make it one of the best tool for ensuring privacy and safety in education environment.</p>
+                <h2 class="card-title">Inverventions</h2>
+                <p class="card-description">The policies and plans put in place to deal with and rectify student infractions are known as interventions. Based on the type and seriousness of the infraction, the Violation Management System includes a number of intervention options. A few of these might be restorative justice initiatives, behavioral training, counseling services, and parental involvement campaigns. The purpose of interventions is to help the student acquire improved behavior patterns and decision-making abilities in addition to addressing the immediate problem. Students can learn from their mistakes and a more positive school environment are fostered by the system, which focuses on constructive and rehabilitative approaches.</p>
             </div>
     </div>
 </div>
+
     <button id="goback" onclick="goBack()">Go Back</button>
 
     <script>
