@@ -13,7 +13,7 @@
             <img src="{{ asset('images/svlogo.png') }}" alt="Logo">
         </div>
     <ul>
-        <li><a href="#about">About</a></li>
+        <li><a href="{{ route('about') }}">About</a></li>
         <li><a href="{{ route('admin.liststudents') }}">Students</a></li>
         <li><a href="#violations">Violations</a></li>
         <li><a href="#policy">Policy</a></li>
@@ -26,30 +26,56 @@
     <h1>Welcome, Admin!</h1>
 
     <!-- Content sections for each navigation link -->
-    <div class="content" id="about">
-        <h2>About</h2>
-        <p>Add your about content here</p>
+<div class="card-container">
+    <div class="card">
+        <img src="{{ asset('images/about.png') }}" alt="Logo">
+            <div class="card-content">
+                <h2 class="card-title">ABOUT</h2>
+                <p class="card-description">Violation Management System (VMS) handles the management and tracing of student misconducts in schools. The system is provided as a whole array of violation-related types such as academic cheating, student misbehavior, poor attendance records, substance abuse and violation of dress codes and other as well. Different levels are designed to categorize violations according to their intensity so that they are subject to    
+                <p>
+                    <a href="{{ route('about') }}">READ MORE...</a>
+                </p>
+                
+            </div>
     </div>
-    <div class="content" id="students">
-        <h2>Students</h2>
-        <p>Add your students content here</p>
+    
+    <div class="card">
+        <img src="{{ asset('images/students.png') }}" alt="Logo">
+            <div class="card-content">
+                <h2 class="card-title">Students</h2>
+                <p class="card-description">
+                </p>
+            </div>
     </div>
-    <div class="content" id="violations">
-        <h2>Violations</h2>
-        <p>Add your violations content here</p>
+
+    <div class="card">
+        <img src="{{ asset('images/violations.png') }}" alt="Logo">
+            <div class="card-content">
+                <h2 class="card-title">Violations</h2>
+                <p class="card-description">
+                </p>
+            </div>
     </div>
-    <div class="content" id="policy">
-        <h2>Policy</h2>
-        <p>Add your policy content here</p>
+
+    <div class="card">
+        <img src="{{ asset('images/policy.png') }}" alt="Logo">
+            <div class="card-content">
+                <h2 class="card-title">Policy</h2>
+                <p class="card-description">
+                </p>
+            </div>
     </div>
-    <div class="content" id="intervention">
-        <h2>Intervention Programs</h2>
-        <p>Add your intervention programs content here</p>
+
+    <div class="card">
+        <img src="{{ asset('images/intervention.png') }}" alt="Logo">
+            <div class="card-content">
+                <h2 class="card-title">Intervention</h2>
+                <p class="card-description">
+                </p>
+            </div>
     </div>
-    <div class="content" id="incident">
-        <h2>Incident Report</h2>
-        <p>Add your incident report content here</p>
-    </div>
+</div>
+
     <footer>
         <p>&copy; {{ date('Y') }} Adamson University. All Rights Reserved.</p>
     </footer>

@@ -31,6 +31,7 @@ Route::post('/register', [RegisterController::class, 'register']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin_dashboard');
+    Route::get('/admin/about', [AdminController::class, 'about'])->name('about');
     Route::get('/listofstudents', [AdminController::class, 'listStudents'])->name('admin.liststudents');
     Route::get('/student/{id}', [AdminController::class, 'viewStudent'])->name('admin.viewstudent');
     Route::get('/incident_report/{id}', [AdminController::class, 'add_incident_report'])->name('add_incident_report');
@@ -42,6 +43,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/editstudent/{id}', [AdminController::class, 'editStudent'])->name('admin.editstudent');
     Route::put('/admin/updatestudent/{id}', [AdminController::class, 'updateStudent'])->name('admin.updatestudent');
     Route::delete('/admin/deletestudent/{id}', [AdminController::class, 'deleteStudent'])->name('admin.deletestudent');
+
 });
 
 //student_dashboard

@@ -18,6 +18,12 @@ class AdminController extends Controller
         return view('admin_dashboard');
     }
 
+    public function about()
+    {
+        // Add your dashboard logic here
+        return view('about');
+    }
+
     public function listStudents()
     {
         $students = User::where('role', 'student')->get();
